@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  simpledungeon-api:
+    build: ./simpledungeon-api
+    ports:
+      - "3080:3000"
+    environment:
+      - DB_USERNAME=${DB_USERNAME}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_HOST=${DB_HOST}
+      - DB_NAME=${DB_NAME}
+  simpledungeon-app:
+    build: ./simpledungeon-app
+    ports:
+      - "3000:3000"
